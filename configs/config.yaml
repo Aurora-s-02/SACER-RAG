@@ -1,0 +1,55 @@
+dataset:
+  dataset_name: InfiniteChoice
+  paths:
+    InfiniteChoice: /path/to/dataset
+    InfiniteQALoader: /path/to/dataset
+    NovelQA: /path/to/dataset
+
+llm:
+  llm_name: Qwen2.5-7B-Instruct
+  llm_path: /path/to/qwen-model
+  llm_device: cuda
+
+paths:
+  index_path: ../outputs/index
+  answer_path: ../outputs/answers
+  evaluation_path: ../outputs/evaluation
+
+extractor:
+  language: en
+  method: Spacy
+
+indexing:
+  summary_backend: transformers
+  summary_max_new_tokens: 1200
+  chunk_size: 1200
+  chunk_overlap: 100
+  merge_num: 5
+  summary_max_words: 200
+  entity_method: Spacy
+  language: en
+  max_books: null
+
+retriever:
+  kwargs:
+    device: cuda
+    shortest_path_k: 4
+    debug: true
+    merge_num: 5
+    overlap: 100
+    tokenizer: /path/to/qwen-model
+    embedder: /path/to/embedder
+    max_chunk_setting: 25
+
+sacer:
+  arg_r_low_confidence_route: aecf
+  phase2_execution_mode: fast_lookup
+  retrieval_input_mode: original
+  anchor_evidence_policy: gate
+  aecf: {}
+
+runtime:
+  answer_backend: transformers
+  max_new_tokens: 300
+  resume: true
+  max_books: null

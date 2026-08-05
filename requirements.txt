@@ -1,0 +1,11 @@
+numpy>=1.24
+networkx>=3.0
+PyYAML>=6.0
+torch>=2.1
+transformers>=4.40
+sentence-transformers>=2.7
+faiss-cpu>=1.8
+spacy>=3.7
+nltk>=3.8
+rouge>=1.0.1
+pytest>=8.0

@@ -114,14 +114,6 @@ python main.py run --config configs/config.yaml --dataset-name InfiniteQALoader
 
 With the confidential implementation installed, index artifacts are written under the configured index directory, answer records under the answer directory, and metrics under the evaluation directory. The public template uses repository-relative output locations. The public release alone does not produce paper-result artifacts because its core retrieval implementations are intentionally redacted.
 
-## Public Release Scope
-
-The public tree includes task loaders, configuration parsing and validation, generic index loading and inspection, generic model loading, answer formatting, file I/O, logging-compatible diagnostics, evaluation metrics, stable command entry points, public types, and module-level documentation. See `PUBLIC_RELEASE_SCOPE.md` for the exact omissions and guarantees.
-
-## Confidential Reviewer Package
-
-The confidential package contains the complete SACI, AFER, ARG-R, CACR, and AECF implementations, the full ablation suite, formal configurations, experiment commands, and comprehensive tests. It is distributed to authorized reviewers through a separate controlled channel. See `REVIEWER_PACKAGE_MANIFEST.md` for the expected package contents.
-
 ## Reproducibility Statement
 
 This public preprint repository is not sufficient to reproduce the paper's complete experimental results. It documents the architecture, source mapping, stable interfaces, configuration contract, and non-confidential infrastructure. Authorized reviewers can verify the complete implementation and experiments with the confidential package and its integrity manifest.
